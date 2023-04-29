@@ -12,6 +12,7 @@ public class DonationDto {
 		return donation_id;
 	}
 	
+	
 	public void setDonation_id(int donation_id) {
 		this.donation_id = donation_id;
 	}
