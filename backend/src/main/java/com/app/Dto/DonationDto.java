@@ -6,11 +6,12 @@ public class DonationDto {
 	private int donation_id, like_count, donation_closeState;
 	private double totalDonationPrice;
 	private String donation_name, donation_detail;
-	private Date donation_closeDate;
+	private Date donation_closeDate;	
 	
 	public int getDonation_id() {
 		return donation_id;
 	}
+	
 	public void setDonation_id(int donation_id) {
 		this.donation_id = donation_id;
 	}
