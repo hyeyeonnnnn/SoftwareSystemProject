@@ -3,7 +3,6 @@ package com.app.Dto;
 import java.sql.Date;
 
 public class DonationDto {
-	
 	private int donation_id, like_count, donation_closeState;
 	private double totalDonationPrice;
 	private String donation_name, donation_detail;
