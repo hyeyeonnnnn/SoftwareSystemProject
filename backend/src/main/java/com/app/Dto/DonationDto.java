@@ -8,7 +8,6 @@ public class DonationDto {
 	private String donation_name, donation_detail;
 	private Date donation_closeDate;	
 	
-	
 	public int getDonation_id() {
 		return donation_id;
 	}
