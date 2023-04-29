@@ -1,0 +1,105 @@
+package com.app.Dao;
+
+import java.sql.Connection;
+import java.sql.PreparedStatement;
+import java.sql.ResultSet;
+import java.sql.SQLException;
+import java.util.ArrayList;
+
+import com.app.Dto.GroupItemDto;
+
+public class GroupItemDao {
+	
+	private Connection conn;
+	
+	// 데이터베이스 연결 담당 메소드
+	public Connection connection()
+	{
+		//conn = DBConn.getConnection();
+		return conn;
+	}
+	
+	// 기부 상품 추가
+	public int insertGroupItem(GroupItemDto dto) throws SQLException
+	{
+		int result = 0;
+		String sql = "INSERT INTO GROUPITEM(GROUP_ID, GROUPITEM_ID, GROUPITEMCATEGORY_ID, GROUPITEM_NAME, GROUPITEM_DETAIL, GROUP_STOCK, GROUPITEM_PRICE, GROUP_RATE, GROUP_NUM, GROUP_STATE, GROUP_CREATEDAT)"
+				   + " VALUES(?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)";
+		PreparedStatement pstmt = conn.prepareStatement(sql);
+		pstmt.setInt(1, dto.getGroup_id());
+		pstmt.setInt(2, dto.getGroupItem_id());
+		pstmt.setInt(3, dto.getGroupItemCategory_id());
+		pstmt.setString(4, dto.getGroupItem_name());
+		pstmt.setString(5, dto.getGroupItem_detail());
+		pstmt.setInt(6, dto.getGroup_stock());
+		pstmt.setDouble(7, dto.getGroupItem_price());
+		pstmt.setInt(8, dto.getGroup_rate());
+		pstmt.setInt(9, dto.getGroup_num());
+		pstmt.setInt(10, dto.getGroup_state());
+		pstmt.setDate(11, dto.getGroup_createdat());
+				
+		result = pstmt.executeUpdate();
+		pstmt.close();
+		return result;
+	}
+	
+	// 기부 상품 리스트 전체 출력
+	public ArrayList<GroupItemDto> lists() throws SQLException
+	{
+		ArrayList<GroupItemDto> result = new ArrayList<GroupItemDto>();
+		String sql = "SELECT GROUP_ID, GROUPITEM_ID, GROUPITEMCATEGORY_ID, GROUPITEM_NAME, GROUPITEM_DETAIL, GROUP_STOCK, GROUPITEM_PRICE, GROUP_RATE, GROUP_NUM, GROUP_STATE, GROUP_CREATEDAT FROM GROUPITEM ORDER BY GROUPITEM_ID";
+		PreparedStatement pstmt = conn.prepareStatement(sql);
+		ResultSet rs = pstmt.executeQuery();
+		
+		while (rs.next())
+		{
+			GroupItemDto groupItem = new GroupItemDto();
+			groupItem.setGroup_id(rs.getInt("GROUP_ID"));
+			groupItem.setGroupItem_id(rs.getInt("GROUPITEM_ID"));
+			groupItem.setGroupItemCategory_id(rs.getInt("GROUPITEMCATEGORY_ID"));
+			groupItem.setGroupItem_name(rs.getString("GROUPITEM_NAME"));
+			groupItem.setGroupItem_detail(rs.getString("GROUPITEM_DETAIL"));
+			groupItem.setGroup_stock(rs.getInt("GROUP_STOCK"));
+			groupItem.setGroupItem_price(rs.getInt("GROUPITEM_PRICE"));
+			groupItem.setGroup_rate(rs.getInt("GROUP_RATE"));
+			groupItem.setGroup_num(rs.getInt("GROUP_NUM"));
+			groupItem.setGroup_state(rs.getInt("GROUP_STATE"));
+			groupItem.setGroup_createdat(rs.getDate("GROUP_CREATEDAT"));
+			
+			result.add(groupItem);
+		}
+		rs.close();
+		pstmt.close();
+		return result;
+	}
+	
+	// 회원 정보 수정
+	public int updateDonation(DonationDto dto) throws SQLException
+	{
+		int result = 0;
+		String sql = "UPDATE DONATION SET DONATION_NAME=?, TOTALDONATIONPRICE=?, CLOSE_DATE=?, DONATION_DETAIL=?, LIKE_COUNT=?";
+		PreparedStatement pstmt = conn.prepareStatement(sql);
+		pstmt.setString(1, dto.getDonation_name());
+		pstmt.setDouble(2, dto.getTotalDonationPrice());
+		pstmt.setDate(3, dto.getClose_date());
+		pstmt.setString(4, dto.getDonation_detail());
+		pstmt.setInt(5, dto.getLike_count());
+		
+		result = pstmt.executeUpdate();
+		
+		return result;
+	}
+
+	// 기부 상품 삭제
+	public int deleteDonation(String donation_id) throws SQLException
+	{
+		DonationDto dto = new DonationDto();
+
+		int result = 0;
+		String sql = "DELETE FROM MEMBER WHERE DONATION_ID = ?";
+		PreparedStatement pstmt = conn.prepareStatement(sql);
+		pstmt.setString(1, donation_id);
+		result = pstmt.executeUpdate();
+		return result;
+	}	
+}

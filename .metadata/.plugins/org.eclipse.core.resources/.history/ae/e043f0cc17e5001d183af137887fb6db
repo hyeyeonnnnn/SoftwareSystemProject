@@ -1,0 +1,78 @@
+package com.app.Dto;
+
+import java.sql.Date;
+
+public class GroupItemDto {
+	
+	private int group_id, groupItem_id, groupItemCategory_id, group_stock, group_rate, group_num, group_state;
+	private double groupItem_price;
+	private String groupItem_name, groupItem_detail;
+	private Date group_createdat;
+	
+	public int getGroup_id() {
+		return group_id;
+	}
+	public void setGroup_id(int group_id) {
+		this.group_id = group_id;
+	}
+	public int getGroupItem_id() {
+		return groupItem_id;
+	}
+	public void setGroupItem_id(int groupItem_id) {
+		this.groupItem_id = groupItem_id;
+	}
+	public int getGroupItemCategory_id() {
+		return groupItemCategory_id;
+	}
+	public void setGroupItemCategory_id(int groupItemCategory_id) {
+		this.groupItemCategory_id = groupItemCategory_id;
+	}
+	public int getGroup_stock() {
+		return group_stock;
+	}
+	public void setGroup_stock(int group_stock) {
+		this.group_stock = group_stock;
+	}
+	public int getGroup_rate() {
+		return group_rate;
+	}
+	public void setGroup_rate(int group_rate) {
+		this.group_rate = group_rate;
+	}
+	public int getGroup_num() {
+		return group_num;
+	}
+	public void setGroup_num(int group_num) {
+		this.group_num = group_num;
+	}
+	public int getGroup_state() {
+		return group_state;
+	}
+	public void setGroup_state(int group_state) {
+		this.group_state = group_state;
+	}
+	public double getGroupItem_price() {
+		return groupItem_price;
+	}
+	public void setGroupItem_price(double groupItem_price) {
+		this.groupItem_price = groupItem_price;
+	}
+	public String getGroupItem_name() {
+		return groupItem_name;
+	}
+	public void setGroupItem_name(String groupItem_name) {
+		this.groupItem_name = groupItem_name;
+	}
+	public String getGroupItem_detail() {
+		return groupItem_detail;
+	}
+	public void setGroupItem_detail(String groupItem_detail) {
+		this.groupItem_detail = groupItem_detail;
+	}
+	public Date getGroup_createdat() {
+		return group_createdat;
+	}
+	public void setGroup_createdat(Date group_createdat) {
+		this.group_createdat = group_createdat;
+	}
+}

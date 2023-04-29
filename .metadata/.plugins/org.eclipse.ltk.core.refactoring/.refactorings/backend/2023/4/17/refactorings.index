@@ -1,1 +1,9 @@
 1682504245700	Delete element
+1682611282283	Rename type 'DonationDao'
+1682611297662	Rename type 'GroupItemDao'
+1682611310075	Rename type 'ItemDao'
+1682611322376	Rename type 'MemberDao'
+1682615051915	Rename type 'DonationOrderImpl'
+1682615358692	Rename type 'MemberImplDao'
+1682615369075	Rename type 'ItemImplDao'
+1682615380278	Rename type 'GroupItemImplDao'

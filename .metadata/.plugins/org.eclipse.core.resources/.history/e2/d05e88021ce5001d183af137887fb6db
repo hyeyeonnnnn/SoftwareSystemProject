@@ -1,0 +1,56 @@
+package com.app.Dto;
+
+import java.sql.Date;
+
+public class DonationDto {
+	
+	private int donation_id, like_count;
+	private double totalDonationPrice;
+	private String donationCategory_id, donation_name, donation_detail;
+	private Date close_date;
+	
+	public int getDonation_id() {
+		return donation_id;
+	}
+	public void setDonation_id(int donation_id) {
+		this.donation_id = donation_id;
+	}
+	public String getDonationCategory_id() {
+		return donationCategory_id;
+	}
+	public void setDonationCategory_id(String donationCategory_id) {
+		this.donationCategory_id = donationCategory_id;
+	}
+	public String getDonation_name() {
+		return donation_name;
+	}
+	public void setDonation_name(String donation_name) {
+		this.donation_name = donation_name;
+	}
+	public Double getTotalDonationPrice() {
+		return totalDonationPrice;
+	}
+	public void setTotalDonationPrice(Double totalDonationPrice) {
+		this.totalDonationPrice = totalDonationPrice;
+	}
+	public Date getClose_date() {
+		return close_date;
+	}
+	public void setClose_date(Date close_date) {
+		this.close_date = close_date;
+	}
+	public String getDonation_detail() {
+		return donation_detail;
+	}
+	public void setDonation_detail(String donation_detail) {
+		this.donation_detail = donation_detail;
+	}
+	public int getLike_count() {
+		return like_count;
+	}
+	public void setLike_count(int like_count) {
+		this.like_count = like_count;
+	}
+
+	
+}

@@ -1,4 +1,8 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
 <qualifiedTypeNameHistroy>
     <fullyQualifiedTypeName name="com.app.Dto.MemberDto"/>
+    <fullyQualifiedTypeName name="com.app.Dto.ItemDto"/>
+    <fullyQualifiedTypeName name="com.app.Dto.DonationDto"/>
+    <fullyQualifiedTypeName name="java.sql.Date"/>
+    <fullyQualifiedTypeName name="com.app.Dto.GroupItemDto"/>
 </qualifiedTypeNameHistroy>

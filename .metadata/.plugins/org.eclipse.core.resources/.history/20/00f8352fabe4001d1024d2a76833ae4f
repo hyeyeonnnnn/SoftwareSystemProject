@@ -1,0 +1,8 @@
+package com.app.Dto;
+
+public class DonationDto {
+	
+	private int donation_id;
+	private String donationCategory_id, donation_name, totalDonationPrice, closeDate, donation_detail, like_count;
+
+}

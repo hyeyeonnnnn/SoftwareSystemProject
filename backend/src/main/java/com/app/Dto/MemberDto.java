@@ -3,7 +3,24 @@ package com.app.Dto;
 public class MemberDto {
 	
 	private String user_id, password, user_name, email, phone, zip, address1, address2;
+	private int gender, birth;
 	
+	public int getGender() {
+		return gender;
+	}
+
+	public void setGender(int gender) {
+		this.gender = gender;
+	}
+
+	public int getBirth() {
+		return birth;
+	}
+
+	public void setBirth(int birth) {
+		this.birth = birth;
+	}
+
 	public String getUser_id()
 	{
 		return user_id;
